@@ -1,0 +1,17 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+@import "tailwindcss";
+
+:root {
+  --grey-1-background: #F6F6F6;
+  --grey-2-input-background: #F2F2F2;
+  --grey-3-subtitle: #BFBFBE;
+  --grey-4-border: #D3D3D3;
+  --grey-5-input-text: #A1A1A1;
+  --black: #1D1D1B;
+  --white: #fff;
+  --font-family: 'Inter', sans-serif;
+}
+
+body {
+  font-family: var(--font-family);
+}
