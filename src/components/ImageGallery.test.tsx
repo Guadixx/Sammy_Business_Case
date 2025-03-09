@@ -6,7 +6,7 @@ import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 const filteredImages = [
   {
     id: '1',
-    title: 'Imagen A',
+    title: 'Image A',
     picture: '',
     likesCount: 10,
     createdAt: '',
@@ -16,7 +16,7 @@ const filteredImages = [
   },
   {
     id: '2',
-    title: 'Imagen B',
+    title: 'Image B',
     picture: '',
     likesCount: 20,
     createdAt: '',
@@ -49,7 +49,7 @@ vi.mock('../hooks/useImage', () => ({
 const queryClient = new QueryClient();
 
 describe('ImageGallery', () => {
-  it('debe mostrar las imágenes filtradas correctamente', async () => {
+  it('should display filtered images correctly', async () => {
     render(
       <QueryClientProvider client={queryClient}>
         <ImageGallery
@@ -62,19 +62,19 @@ describe('ImageGallery', () => {
     );
 
     await waitFor(() => {
-      expect(screen.getByText(/Imagen A/i)).toBeInTheDocument();
-      expect(screen.getByText(/Imagen B/i)).toBeInTheDocument();
+      expect(screen.getByText(/Image A/i)).toBeInTheDocument();
+      expect(screen.getByText(/Image B/i)).toBeInTheDocument();
     });
   });
 
-  it('no debe mostrar imágenes que no coinciden con el término de búsqueda', async () => {
+  it('should not display images that do not match the search term', async () => {
     render(
       <QueryClientProvider client={queryClient}>
         <ImageGallery
           filteredImages={filteredImages.filter((image) =>
-            image.title.toLowerCase().includes('Imagen A'.toLowerCase()),
+            image.title.toLowerCase().includes('Image A'.toLowerCase()),
           )}
-          searchTerm="Imagen A"
+          searchTerm="Image A"
           isFetchingNextPage={false}
           hasNextPage={false}
         />
@@ -82,8 +82,8 @@ describe('ImageGallery', () => {
     );
 
     await waitFor(() => {
-      expect(screen.getByText(/Imagen A/i)).toBeInTheDocument();
-      expect(screen.queryByText(/Imagen B/i)).not.toBeInTheDocument();
+      expect(screen.getByText(/Image A/i)).toBeInTheDocument();
+      expect(screen.queryByText(/Image B/i)).not.toBeInTheDocument();
     });
   });
 });
