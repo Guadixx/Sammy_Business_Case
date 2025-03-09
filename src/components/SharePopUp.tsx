@@ -18,13 +18,11 @@ export function SharePopup(props: Readonly<SharePopupProps>) {
   };
 
   return (
-    <div
-      className="fixed inset-0 flex items-center justify-center z-50"
-      onClick={props.onClose}
-    >
+    <div className="fixed inset-0 flex items-center justify-center z-50">
       <div
         className="fixed inset-0 bg-black"
         style={{ backgroundColor: 'rgba(0, 0, 0, 0.50)' }}
+        onClick={props.onClose}
       ></div>
 
       <div className="bg-white p-4 rounded-lg shadow-lg z-50 w-80">

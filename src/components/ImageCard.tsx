@@ -12,7 +12,7 @@ export function ImageCard(props: Readonly<ImageCardProps>) {
   const [isLiked, setIsLiked] = useState(props.liked);
   const [likesCount, setLikesCount] = useState(props.likesCount);
 
-  const shareLink = `https://github.com/GuadalupeDoudchitzky`;
+  const shareLink = `https://github.com/Guadixx`;
 
   const likeMutation = useMutation({
     mutationFn: () => likeImage(props.id),
@@ -40,9 +40,9 @@ export function ImageCard(props: Readonly<ImageCardProps>) {
   return (
     <div
       key={props.id}
-      className="bg-[var(--white)] overflow-hidden my-4 max-w-[400px] max-h-[460px] !important"
+      className="bg-[var(--white)] overflow-hidden my-4 min-h-[350px] max-w-[400px] w-full sm:max-h-[460px] !important"
     >
-      <div className="relative max-w-[400px] max-h-[460px]">
+      <div className="relative max-w-[400px] max-h-[460px] ">
         {!imageLoaded && !imageError && (
           <div className="absolute inset-0 flex items-center justify-center">
             <div className="w-8 h-8 border-4 border-blue-500 rounded-full border-t-transparent animate-spin"></div>
@@ -73,7 +73,7 @@ export function ImageCard(props: Readonly<ImageCardProps>) {
         />
       </div>
 
-      <div className="p-4 text-center border-[var(--grey-4-border)] border-1 bg-[var(--grey-1-background)]">
+      <div className="p-4 flex justify-center flex-col items-center border-[var(--grey-4-border)] border-1 bg-[var(--grey-1-background)]">
         <p className="font-inter font-normal text-xl text-[var(--black)] text-[28px] truncate max-w-[250px] sm:max-w-[350px]">
           {props.title.toUpperCase()}
         </p>

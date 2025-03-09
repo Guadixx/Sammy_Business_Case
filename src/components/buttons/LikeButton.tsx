@@ -12,7 +12,7 @@ interface LikeButtonProps {
 
 export function LikeButton(props: Readonly<LikeButtonProps>) {
   return (
-    <>
+    <div className="flex items-center sm:flex-col">
       <button
         className={`rounded-full ${props.shadow}  hover:bg-gray-100 transition-colors ${props.padding} ${props.backgroundColor}`}
         aria-label={props.isLiked ? 'Unlike' : 'Like'}
@@ -21,12 +21,12 @@ export function LikeButton(props: Readonly<LikeButtonProps>) {
         {props.isLiked ? (
           <IconHeartFilled className="w-6 h-6 text-red-600" />
         ) : (
-          <IconHeartPlus className="w-6 h-6 text-gray-500" />
+          <IconHeartPlus className="w-6 h-6 text-[var(--black)]" />
         )}
       </button>
-      <p className={`text-sm p-0 mb-2 text-${props.textColor}`}>
+      <p className={`text-sm m-1 content-center text-${props.textColor}`}>
         {props.likesCount}
       </p>
-    </>
+    </div>
   );
 }

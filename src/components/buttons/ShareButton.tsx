@@ -42,7 +42,7 @@ export function ShareButton(props: Readonly<ShareButtonProps>) {
     setShareCount(savedShareCount);
   }, [props.imageId]);
   return (
-    <>
+    <div className="flex items-center sm:flex-col">
       <button
         className={`${props.padding} ${props.backgroundColor} ${props.shadow} rounded-full flex items-center justify-center hover:bg-gray-100 transition-colors`}
         onClick={handleShareClick}
@@ -50,7 +50,7 @@ export function ShareButton(props: Readonly<ShareButtonProps>) {
       >
         <IconSend2 className="w-6 h-6 text-[var(--black)]" />
       </button>
-      <p className={`text-sm text-${props.textColor}`}>{shareCount}</p>
+      <p className={`text-sm text-${props.textColor} m-1`}>{shareCount}</p>
       {isSharePopupOpen && (
         <SharePopup
           link={props.shareLink}
@@ -58,6 +58,6 @@ export function ShareButton(props: Readonly<ShareButtonProps>) {
           incrementShareCount={incrementShareCount}
         />
       )}
-    </>
+    </div>
   );
 }
