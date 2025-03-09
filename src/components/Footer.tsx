@@ -7,7 +7,7 @@ const Footer = () => {
     <footer className="bg-[var(--white)] bg-opacity-80 py-4 text-white">
       <div className="flex justify-center space-x-6 mb-4">
         <a
-          href="https://github.com/tu-usuario"
+          href="https://github.com/Guadixx/Sammy_Business_Case"
           target="_blank"
           rel="noopener noreferrer"
         >
