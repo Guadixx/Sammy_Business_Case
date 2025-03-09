@@ -14,9 +14,7 @@ export function ImageGallery(props: Readonly<ImageGridProps>) {
   const { isLoading, hasNextPage, fetchNextPage, isFetchingNextPage, isError } =
     useImages();
 
-  const observerRef = useRef<IntersectionObserver | null>(null);
   const loadMoreRef = useRef<HTMLDivElement | null>(null);
-
   const observer = useRef<IntersectionObserver | null>(null);
 
   useEffect(() => {
@@ -29,16 +27,16 @@ export function ImageGallery(props: Readonly<ImageGridProps>) {
     };
 
     observer.current = new IntersectionObserver(handleIntersection, {
-      threshold: 1.0,
+      threshold: 0.5,
     });
 
     if (loadMoreRef.current && observer.current) {
-      observerRef.current?.observe(loadMoreRef.current);
+      observer.current?.observe(loadMoreRef.current);
     }
 
     return () => {
-      if (observerRef.current && loadMoreRef.current) {
-        observerRef.current.unobserve(loadMoreRef.current);
+      if (observer.current && loadMoreRef.current) {
+        observer.current.unobserve(loadMoreRef.current);
       }
     };
   }, [fetchNextPage, hasNextPage, isLoading]);
