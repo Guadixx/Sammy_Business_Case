@@ -64,7 +64,7 @@ export function ImageGallery(props: Readonly<ImageGridProps>) {
 
   return (
     <div className="max-w-7xl mx-auto px-4 py-6">
-      <div className="flex flex-col items-center sm:grid sm:grid-cols-2 lg:grid-cols-3 gap-x-8 w-full">
+      <div className="grid-cols-1 items-center sm:grid sm:grid-cols-2 lg:grid-cols-3 gap-x-4 sm:gap-x-8 w-full">
         {props.filteredImages?.map((image) => (
           <ImageCard
             key={image.id}
