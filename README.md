@@ -4,17 +4,18 @@
 This is a Single Page Application (SPA) designed to display a list of items. Each item includes relevant information such as its price, and interactive features like "Like" and "Share" buttons. The app allows users to easily browse through the items, like their favorites, and share them with others. It is built with a focus on simplicity and a smooth user experience.
 
 ## Technologies used 
-### React 
-### Typescript 
-### Tanstack Query
-### Vitest
-### Testing Library
-### Tailwind CSS
-### Tabler Icons
-### Eslint & Prettier 
+#### React 
+#### Typescript 
+#### Tanstack Query
+#### Vitest
+#### Testing Library
+#### Tailwind CSS
+#### Tabler Icons
+#### Eslint & Prettier 
 
 ## Clone Repository 
 Clone repo to local folder..
+
 `git clone https://github.com/Guadixx/Sammy_Business_Case`
 
 ## Install language dependencies
