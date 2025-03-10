@@ -7,10 +7,14 @@ export function useImages() {
     queryFn: ({ pageParam }) => fetchImages(pageParam),
     initialPageParam: undefined,
     getNextPageParam: (lastPage) => {
-      return lastPage.pageInfo.hasNextPage ? lastPage.pageInfo.endCursor : undefined;
+      return lastPage.pageInfo.hasNextPage
+        ? lastPage.pageInfo.endCursor
+        : undefined;
     },
     select: (data) => {
-      return data.pages.flatMap((page) => page.edges.map((edge: { node: any; }) => edge.node));
+      return data.pages.flatMap((page) =>
+        page.edges.map((edge: { node: any }) => edge.node),
+      );
     },
   });
 }

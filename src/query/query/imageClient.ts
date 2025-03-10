@@ -32,7 +32,7 @@ export async function fetchImages(cursor?: string) {
       `,
       variables: {
         first: 20,
-        after: cursor, 
+        after: cursor,
       },
     }),
   });
@@ -44,7 +44,6 @@ export async function fetchImages(cursor?: string) {
   const data = await response.json();
   return data.data.images;
 }
-
 
 export async function likeImage(imageId: any) {
   const response = await fetch(API_URL, {
